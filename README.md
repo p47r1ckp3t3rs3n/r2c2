@@ -10,6 +10,11 @@ You can use Homebrew to install the script:
 brew tap bajtyngier/homebrew-r2c
 brew install r2c
 ```
+In order to update to latest version:
+```
+brew update
+brew reinstall r2c
+```
 ### Usage
 In order to use the script, simply run the command:
 ```
