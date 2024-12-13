@@ -15,7 +15,7 @@ def load_config():
         with open(CONFIG_FILE, "r") as f:
             config = json.load(f)
 
-    required_keys = ["redmine_api_key", "clickup_api_key"]
+    required_keys = ["redmine_api_key", "clickup_api_key", "clickup_team_id"]
     for key in required_keys:
         if key not in config or not config[key]:
             config[key] = input(f"Enter {key}: ")
