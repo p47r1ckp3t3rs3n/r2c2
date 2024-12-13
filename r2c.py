@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 import os
 import json
 import requests
@@ -7,7 +8,9 @@ import argparse
 
 REDMINE_BASE_URL = "https://tickets.vivino.com"
 CLICKUP_BASE_URL = "https://api.clickup.com/api/v2"
-CONFIG_FILE = "r2c.json"
+
+script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
+CONFIG_FILE = os.path.join(script_dir, "r2c.json")
 
 def load_config():
     if not os.path.exists(CONFIG_FILE):
