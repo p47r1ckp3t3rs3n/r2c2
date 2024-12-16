@@ -51,10 +51,11 @@ def close_issue_in_redmine(issue_id, task_id, api_key):
         "content-type": f"application/json",
         "X-Redmine-API-Key": api_key
     }
+    task_url = f" https://app.clickup.com/t/{task_id}" if task_id else ""
     payload = {
         "issue": {
             "status_id": 20,
-            "notes": f"Migrated to a ClickUp task https://app.clickup.com/t/{task_id}"
+            "notes": f"Migrated to a ClickUp task{task_url}"
         }
     }
     response = requests.put(url, headers=headers, json=payload)
@@ -83,8 +84,10 @@ def create_task_in_clickup(list_id, issue, api_key, team_id):
     if response.status_code in (200, 201):
         task_id = response_data.get("id")
         print(f"Success! https://app.clickup.com/t/{task_id}")
+        return task_id
     else:
         print(f"Failed to create a ClickUp task ({response.status_code})")
+        return None
 
 def transfer_task(issue_id, list_id):
     config = load_config()
