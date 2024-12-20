@@ -6,9 +6,9 @@ import argparse
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 
-from r2c.config import Config
-from r2c.redmine.redmine_api import RedmineAPI
-from r2c.clickup.clickup_api import ClickUpAPI
+from config import Config
+from redmine.redmine_api import RedmineAPI
+from clickup.clickup_api import ClickUpAPI
 
 config = Config()
 
