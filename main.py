@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 
-import os
-import sys
 import argparse
 
-sys.path.append(os.path.dirname(os.path.realpath(__file__)))
-
+from redmine.redmine import Redmine
+from clickup.clickup import ClickUp
 from config import Config
-from redmine.redmine_api import RedmineAPI
-from clickup.clickup_api import ClickUpAPI
 
 config = Config()
 
