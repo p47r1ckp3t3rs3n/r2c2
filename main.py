@@ -2,9 +2,9 @@
 
 import argparse
 
+from config import Config
 from redmine.redmine import Redmine
 from clickup.clickup import ClickUp
-from config import Config
 
 config = Config()
 
