@@ -7,7 +7,7 @@ The script will create a ClickUp task with name and description of the provided 
 ### Installation
 You can use Homebrew to install the script:
 ```
-brew tap bajtyngier/homebrew-r2c
+brew tap bajtyngier/r2c
 brew install r2c
 ```
 In order to update to latest version:
