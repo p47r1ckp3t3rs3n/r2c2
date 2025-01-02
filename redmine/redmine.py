@@ -24,3 +24,4 @@ class Redmine:
 			}
 		}
 		self.api.update_issue(self.issue_id, api_key, payload)
+		print(f"✅ Migrated to ClickUp task{task_url}")
