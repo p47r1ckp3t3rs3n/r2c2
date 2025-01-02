@@ -13,13 +13,30 @@ class ClickUp:
 		description = f"Migrated from a Redmine ticket\nhttps://tickets.vivino.com/issues/{issue.get("id")}\n\n" +  description
 		payload = {
 			"name": title,
-			"description": description
+			"description": description,
+			"custom_item_id": self.get_task_type(issue)
 		}
 		task = self.api.create_task(list_id, team_id, api_key, payload)
 		if task:
 			self.task_id = task.get("id")
 			self.set_resource(task, redmine, api_key, team_id)
 			self.set_automation(task, redmine, api_key, team_id)
+
+	def get_task_type(self, issue):
+		print(f"Getting the task type based on issue tracker")
+		value = issue.get("tracker").get("id")
+		if value is None:
+			print(f" * Failed to get the issue tracker")
+			return None
+		trackers = {
+			1: 1012, #bug -> bug
+			2: 0, #feature -> task
+			5: 0, #automation -> task
+			6: 1014, #operation -> operation
+			7: 0, #ideas -> task
+			8: 1016, #incident -> incident
+		}
+		return trackers.get(value, 0)
 
 	def set_resource(self, task, redmine, api_key, team_id):
 		print(f"Setting the resource based on repository")
