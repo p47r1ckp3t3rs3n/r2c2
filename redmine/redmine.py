@@ -12,7 +12,10 @@ class Redmine:
 
 	def get_custom_field_value(self, field_id):
 		custom_fields = self.issue.get("custom_fields")
-		return next((field for field in custom_fields if field.get('id') == field_id), None).get("value")
+		field = next((field for field in custom_fields if field.get('id') == field_id), None)
+		if field is None:
+			return None
+		return field.get("value")
 
 	def close_issue(self, task_id, api_key):
 		print(f"Closing the Redmine issue")

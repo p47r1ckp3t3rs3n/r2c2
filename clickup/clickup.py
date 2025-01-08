@@ -40,8 +40,12 @@ class ClickUp:
 
 	def set_resource(self, task, redmine, api_key, team_id):
 		print(f"Setting the resource based on repository")
-		value = redmine.get_custom_field_value(41)[0]
-		if not value:
+		field_value = redmine.get_custom_field_value(41)
+		if not field_value:
+			print(f" * Failed to get the repository")
+			return None
+		value = field_value[0]
+		if value is None:
 			print(f" * Failed to get the repository")
 			return None
 		field_id = "b5db13c7-2e07-4f52-b2a7-941abcd8dee0"
