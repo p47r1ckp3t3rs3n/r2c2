@@ -35,3 +35,26 @@ The script will also prompty you to provide some configuration. You will have to
 * Redmine API Key - everyone has a personal key in "My account" > "API access key"
 * ClickUp API Key - everyone has a personal key in "Settings" > "Apps" > "API Token"
 * ClickUp Team ID - you can get it from the URL once you open any ClickUp page in a browser
+
+### Troubleshooting
+
+#### `ModuleNotFoundError: No module names 'requests'`
+In case you are facing this error, it means you need to install Python's `requests` module. You can install it by running the command:
+```
+pip3 install requests
+```
+If the above command triggers an environment related error, you can install `requests` via a virtual environment. Follow the steps below.
+
+1. First, create and activate a virtual environment:
+```
+python3 -m venv myenv
+source myenv/bin/activate
+```
+2. Then, install `requests`:
+```
+pip install requests
+```
+3. Lastly, deactivate the virtual environment:
+```
+deactivate
+```
