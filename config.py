@@ -5,7 +5,7 @@ import json
 class Config:
 	def load(self):
 		script_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
-		config_file = os.path.join(script_dir, "r2c.json")
+		config_file = os.path.join(script_dir, "r2c2.json")
 		if not os.path.exists(config_file):
 			print(f"Config file not found. Creating a new one.")
 			config = {}

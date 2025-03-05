@@ -1,24 +1,24 @@
-# r2c
-This is a script written in Python that migrates a Redmine issue into a ClickUp ticket.
+# r2c2
+This is a script written in Python that migrates a Redmine issue into a formatted ClickUp ticket.
 
 ### Capabilities
-The script will create a ClickUp task with name and description of the provided Redmine issue. It will also set the Redmine issue status to "Migrated" and cross-link the Redmine issue and the ClickUp task.
+The script will create a ClickUp task with name and description of the provided Redmine issue. It will also set the Redmine issue status to "Obsolete" and cross-link the Redmine issue and the ClickUp task.
 
 ### Installation
 You can use Homebrew to install the script:
 ```
-brew tap bajtyngier/r2c
-brew install r2c
+brew tap p47r1ckp3t3rs3n/r2c2
+brew install r2c2
 ```
 In order to update to latest version:
 ```
 brew update
-brew reinstall r2c
+brew reinstall r2c2
 ```
 ### Usage
 In order to use the script, simply run the command:
 ```
-r2c
+r2c2
 ```
 #### Parameters
 The script will prompt you to provide.
@@ -27,7 +27,7 @@ The script will prompt you to provide.
 
 You can also run the command with the above parameters included:
 ```
-r2c --id <redmine_issue_id> --list <clickup_list_id>
+r2c2 --id <redmine_issue_id> --list <clickup_list_id>
 ```
 
 #### Configuration
